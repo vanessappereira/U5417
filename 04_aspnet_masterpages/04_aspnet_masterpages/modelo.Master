@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="modelo.master.cs" Inherits="_04_aspnet_masterpages.modelo" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Master Pages</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <!-- Header Section -->
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <span class="fs-4">ASP.NET Master Pages</span>
+            </header>
+
+            <!-- Navigation Section -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="formulario1.aspx">Formulário 1</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="formulario2.aspx">Formulário 2</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="formulario3.aspx">Formulário 3</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content Section -->
+            <main>
+                <asp:ContentPlaceHolder ID="main_content" runat="server">
+                </asp:ContentPlaceHolder>
+            </main>
+
+            <!-- Footer Section -->
+            <footer class="py-3 my-4">
+                <p class="text-center text-muted">© 2023 Master Pages </p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
