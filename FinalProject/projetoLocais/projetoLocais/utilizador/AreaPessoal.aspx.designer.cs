@@ -11,25 +11,16 @@ namespace projetoLocais.utilizador
 {
 
 
-    public partial class AreaPessoal
+    public partial class areaPessoal
     {
 
         /// <summary>
-        /// form1 control.
+        /// gridLocais control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
-        /// listLocais control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList listLocais;
+        protected global::System.Web.UI.WebControls.GridView gridLocais;
     }
 }

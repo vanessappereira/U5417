@@ -1,15 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CriarLocal.aspx.cs" Inherits="projetoLocais.utilizador.CriarLocal" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Criar Local</title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-        </div>
-    </form>
-</body>
-</html>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="criarLocal.aspx.cs" Inherits="projetoLocais.utilizador.criarLocal" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="headContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="mainContent" runat="server">
+</asp:Content>

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace projetoLocais.utilizador
 {
-    public partial class EditarLocal : System.Web.UI.Page
+    public partial class editarLocal : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

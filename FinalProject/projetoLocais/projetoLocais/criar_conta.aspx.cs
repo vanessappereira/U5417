@@ -1,25 +1,34 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Web.Security;
+using System.Web.UI.WebControls;
 
 namespace projetoLocais
 {
-    public partial class CriarConta : System.Web.UI.Page
+    public partial class criar_conta : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                string data = DateTime.Now.AddYears(-18).ToShortDateString();
+                validarDataNascimento.ErrorMessage =
+                "Defina data igual ou anterior a " + data;
+                validarDataNascimento.Type = ValidationDataType.Date;
+                validarDataNascimento.Operator = ValidationCompareOperator.LessThan;
+                validarDataNascimento.ValueToCompare = data;
+            }
         }
         protected void buttonCriarConta_Click(object sender, EventArgs e)
         {
-            // Criar conta - Membership 
+            //Criar conta - Membership 
             Membership.CreateUser(textUsername.Text, textPassword.Text, textEmail.Text);
 
-            // Obter o UserID 
+            //obter o UserID 
             MembershipUser user = Membership.GetUser(textUsername.Text);
             object user_id = user.ProviderUserKey;
 
-            // Criar Utilizador (Locais.Utilizador) 
+            //Criar Utilizador (Locais.Utilizador) 
 
             SqlConnection connection = new SqlConnection(
             @"data source=.\Sqlexpress; initial catalog = Locais; integrated security = true;");
@@ -39,7 +48,6 @@ namespace projetoLocais
             connection.Close();
 
             Response.Redirect("login.aspx");
-
         }
     }
 }

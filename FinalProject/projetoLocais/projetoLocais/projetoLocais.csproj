@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{ABD611FE-4945-43D2-AE37-0B5856B3C6D3}</ProjectGuid>
+    <ProjectGuid>{CDBAD079-6B06-41DB-8B50-489861452210}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -92,10 +92,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="CriarConta.aspx" />
+    <Content Include="criar_conta.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Homepage.aspx" />
-    <Content Include="Login.aspx" />
+    <Content Include="login.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -124,82 +123,75 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <None Include="Scripts\jquery-3.7.1-vsdoc.js" />
+    <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
-    <Content Include="utilizador\AreaPessoal.aspx" />
-    <Content Include="utilizador\CriarLocal.aspx" />
-    <Content Include="utilizador\EditarLocal.aspx" />
-    <Content Include="VerLocal.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="utilizador\areaPessoal.aspx" />
+    <Content Include="utilizador\criarLocal.aspx" />
+    <Content Include="utilizador\editarLocal.aspx" />
+    <Content Include="web.config" />
+    <Content Include="utilizador\web.config" />
+    <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CriarConta.aspx.cs">
-      <DependentUpon>CriarConta.aspx</DependentUpon>
+    <Compile Include="criar_conta.aspx.cs">
+      <DependentUpon>criar_conta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CriarConta.aspx.designer.cs">
-      <DependentUpon>CriarConta.aspx</DependentUpon>
+    <Compile Include="criar_conta.aspx.designer.cs">
+      <DependentUpon>criar_conta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Homepage.aspx.cs">
-      <DependentUpon>Homepage.aspx</DependentUpon>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Homepage.aspx.designer.cs">
-      <DependentUpon>Homepage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="utilizador\AreaPessoal.aspx.cs">
-      <DependentUpon>AreaPessoal.aspx</DependentUpon>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="utilizador\AreaPessoal.aspx.designer.cs">
-      <DependentUpon>AreaPessoal.aspx</DependentUpon>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="utilizador\CriarLocal.aspx.cs">
-      <DependentUpon>CriarLocal.aspx</DependentUpon>
+    <Compile Include="utilizador\areaPessoal.aspx.cs">
+      <DependentUpon>areaPessoal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="utilizador\CriarLocal.aspx.designer.cs">
-      <DependentUpon>CriarLocal.aspx</DependentUpon>
+    <Compile Include="utilizador\areaPessoal.aspx.designer.cs">
+      <DependentUpon>areaPessoal.aspx</DependentUpon>
     </Compile>
-    <Compile Include="utilizador\EditarLocal.aspx.cs">
-      <DependentUpon>EditarLocal.aspx</DependentUpon>
+    <Compile Include="utilizador\criarLocal.aspx.cs">
+      <DependentUpon>criarLocal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="utilizador\EditarLocal.aspx.designer.cs">
-      <DependentUpon>EditarLocal.aspx</DependentUpon>
+    <Compile Include="utilizador\criarLocal.aspx.designer.cs">
+      <DependentUpon>criarLocal.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VerLocal.aspx.cs">
-      <DependentUpon>VerLocal.aspx</DependentUpon>
+    <Compile Include="utilizador\editarLocal.aspx.cs">
+      <DependentUpon>editarLocal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VerLocal.aspx.designer.cs">
-      <DependentUpon>VerLocal.aspx</DependentUpon>
+    <Compile Include="utilizador\editarLocal.aspx.designer.cs">
+      <DependentUpon>editarLocal.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.1.min.map" />
-    <Content Include="utilizador\Web.config" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
     </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -218,7 +210,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>62614</DevelopmentServerPort>
+          <DevelopmentServerPort>52880</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:62614/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

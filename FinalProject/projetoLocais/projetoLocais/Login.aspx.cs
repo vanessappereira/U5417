@@ -4,7 +4,7 @@ using System.Web.Security;
 
 namespace projetoLocais
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class login : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -12,10 +12,10 @@ namespace projetoLocais
         }
         protected void loginUtilizador_LoggedIn(object sender, EventArgs e)
         {
-            // Obter dados do utilizador - Membership 
+            //obter dados do utilizador - Membership 
             MembershipUser user = Membership.GetUser(loginUtilizador.UserName);
 
-            // Login de utilizador - obter ID (chave primária - Utilizador) e colocar em Session 
+            //Login de utilizador - obter ID (chave primária - Utilizador) e colocar em Session 
 
             SqlConnection connection = new SqlConnection(
             @"data source=.\Sqlexpress; initial catalog = Locais; integrated security = true;");
@@ -38,6 +38,5 @@ namespace projetoLocais
 
             Response.Redirect("paginaInicial.aspx");
         }
-
     }
 }

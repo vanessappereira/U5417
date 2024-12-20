@@ -11,8 +11,17 @@ namespace projetoLocais
 {
 
 
-    public partial class Homepage
+    public partial class Site
     {
+
+        /// <summary>
+        /// headContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder headContent;
 
         /// <summary>
         /// form1 control.
@@ -24,21 +33,21 @@ namespace projetoLocais
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// DataList1 control.
+        /// loginStatusUtilizador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList DataList1;
+        protected global::System.Web.UI.WebControls.LoginStatus loginStatusUtilizador;
 
         /// <summary>
-        /// Locais control.
+        /// mainContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource Locais;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder mainContent;
     }
 }

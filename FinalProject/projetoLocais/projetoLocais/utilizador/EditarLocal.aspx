@@ -1,15 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditarLocal.aspx.cs" Inherits="projetoLocais.utilizador.EditarLocal" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-        </div>
-    </form>
-</body>
-</html>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="editarLocal.aspx.cs" Inherits="projetoLocais.utilizador.editarLocal" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="headContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="mainContent" runat="server">
+</asp:Content>
