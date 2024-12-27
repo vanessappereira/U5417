@@ -13,9 +13,9 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
 
     <style>
-        /*cores - https://colorhunt.co/palette/a59d84c1baa1d7d3bfecebde*/
+        /* cores - https://colorhunt.co/palette/a59d84c1baa1d7d3bfecebde*/
 
-        /*cores - verdes - https://colorhunt.co/palette/4b594566785f91ac8fb2c9ad*/
+        /* cores - verdes - https://colorhunt.co/palette/4b594566785f91ac8fb2c9ad*/
 
         body {
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -42,10 +42,10 @@
         }
 
         footer span {
-                display: inline-block;
-                font-size: 1.2em;
-                margin: 20px 20px;
-                color: #5a5649;
+            display: inline-block;
+            font-size: 1.2em;
+            margin: 20px 20px;
+            color: #5a5649;
         }
 
         ul li a:hover {

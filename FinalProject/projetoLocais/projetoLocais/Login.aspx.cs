@@ -8,7 +8,10 @@ namespace projetoLocais
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("paginaInicial.aspx"); // Redireciona para a página de início ou outra página desejada
+            }
         }
         protected void loginUtilizador_LoggedIn(object sender, EventArgs e)
         {

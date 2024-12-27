@@ -95,6 +95,7 @@
     <Content Include="criar_conta.aspx" />
     <Content Include="Global.asax" />
     <Content Include="login.aspx" />
+    <Content Include="paginainicial.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -131,6 +132,7 @@
     <Content Include="utilizador\areaPessoal.aspx" />
     <Content Include="utilizador\criarLocal.aspx" />
     <Content Include="utilizador\editarLocal.aspx" />
+    <Content Include="verlocal.aspx" />
     <Content Include="web.config" />
     <Content Include="utilizador\web.config" />
     <Content Include="Site.Master" />
@@ -152,6 +154,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="paginainicial.aspx.cs">
+      <DependentUpon>paginainicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="paginainicial.aspx.designer.cs">
+      <DependentUpon>paginainicial.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -181,6 +190,13 @@
     </Compile>
     <Compile Include="utilizador\editarLocal.aspx.designer.cs">
       <DependentUpon>editarLocal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="verlocal.aspx.cs">
+      <DependentUpon>verlocal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verlocal.aspx.designer.cs">
+      <DependentUpon>verlocal.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
