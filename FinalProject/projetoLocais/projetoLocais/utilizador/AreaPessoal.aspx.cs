@@ -8,11 +8,21 @@ namespace projetoLocais.utilizador
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ObterLocais();
+
+            if (!IsPostBack)
+            {
+                // Definir o nome do utilizador
+                if (Session["nome_utilizador"] != null)
+                {
+                    nomeUtilizadorLiteral.Text = Session["nome_utilizador"].ToString();
+                }
+                ObterLocais();
+            }
         }
+
         void ObterLocais()
         {
-            //verificar se o Id do utilizador se encontra em Session 
+            // verificar se o Id do utilizador se encontra em Session 
             if (Session["id_utilizador"] != null)
             {
                 SqlConnection connection = new SqlConnection(
@@ -22,9 +32,8 @@ namespace projetoLocais.utilizador
                 command.Connection = connection;
                 command.CommandText = "SELECT Id, Nome, Foto FROM Local WHERE Utilizador = @id";
 
-                //associar Id do utilizador ao comando, de forma a 
-                //obter apenas os locais criados pelo utilizador 
-
+                // associar Id do utilizador ao comando, de forma a 
+                // obter apenas os locais criados pelo utilizador 
                 command.Parameters.AddWithValue("@id", Session["id_utilizador"].ToString());
 
                 connection.Open();
@@ -34,9 +43,33 @@ namespace projetoLocais.utilizador
                 reader.Close();
                 connection.Close();
 
-                gridLocais.DataSource = table;
-                gridLocais.DataBind();
+                if (table != null)
+                {
+                    gridLocais.DataSource = table;
+                    gridLocais.DataBind();
+                    semLocais.Visible = false;
+                }
+                else
+                {
+                    semLocais.Visible = true;
+                }
             }
+
+            else
+            {
+                // Adicionar uma mensagem de log aqui se Session["id_utilizador"] for nulo
+                Response.Write("Session id_utilizador é nulo.");
+            }
+        }
+        protected void btnCriarLocal_Click(object sender, EventArgs e)
+        {
+            // Redirecionar para a página de criação de local
+            Response.Redirect("~/criarLocal.aspx");
+        }
+        protected void btnEditarLocal_Click(object sender, EventArgs e)
+        {
+            // Redirecionar para a página de edição de local
+            Response.Redirect("~/editarLocal.aspx");
         }
     }
 }

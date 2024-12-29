@@ -7,7 +7,7 @@
         h2 {
             text-align: center;
             color: #333;
-            padding-top:10px;
+            padding-top: 10px;
         }
 
         label {
@@ -41,10 +41,25 @@
             .styled-button:hover {
                 background-color: #45a049;
             }
+
+        .template-layout {
+            width: 500px;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .checkbox-label {
+            margin-left: 5px; /* Adjust as needed for spacing */
+            color: #555; /* Adjust color as needed */
+        }
     </style>
 
     <h2>Login</h2>
-    <asp:Login ID="loginUtilizador" runat="server">
+    <asp:Login ID="loginUtilizador" runat="server" CssClass="template-layout">
         <LayoutTemplate>
             <label for="UserName">Nome de Utilizador</label>
             <asp:TextBox ID="UserName" runat="server" CssClass="styled-input" />
@@ -52,7 +67,10 @@
             <label for="Password">Palavra-passe</label>
             <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="styled-input" />
 
-            <asp:CheckBox ID="RememberMe" runat="server" Text="Lembrar-se de mim na próxima vez" />
+            <div class="checkbox-container">
+                <asp:CheckBox ID="RememberMe" runat="server" />
+                <asp:Label AssociatedControlID="RememberMe" runat="server" Text="Lembrar-se de mim na próxima vez" CssClass="checkbox-label" />
+            </div>
 
             <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Iniciar Sessão" CssClass="styled-button" />
         </LayoutTemplate>

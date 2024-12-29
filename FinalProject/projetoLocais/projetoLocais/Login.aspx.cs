@@ -15,10 +15,10 @@ namespace projetoLocais
         }
         protected void loginUtilizador_LoggedIn(object sender, EventArgs e)
         {
-            //obter dados do utilizador - Membership 
+            // Obter dados do utilizador - Membership 
             MembershipUser user = Membership.GetUser(loginUtilizador.UserName);
 
-            //Login de utilizador - obter ID (chave primária - Utilizador) e colocar em Session 
+            // Login de utilizador - obter ID (chave primária - Utilizador) e colocar em Session 
 
             SqlConnection connection = new SqlConnection(
             @"data source=.\Sqlexpress; initial catalog = Locais; integrated security = true;");
@@ -30,6 +30,7 @@ namespace projetoLocais
 
             connection.Open();
             SqlDataReader reader;
+            string nome_utilizador = (string)command.ExecuteScalar();
             reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -38,6 +39,8 @@ namespace projetoLocais
             connection.Close();
 
             Session["id_utilizador"] = id;
+            Session["nome_utilizador"] = nome_utilizador;
+
 
             Response.Redirect("paginaInicial.aspx");
         }

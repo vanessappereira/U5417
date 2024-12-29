@@ -12,7 +12,7 @@
             <p>
                 Área 
                 <asp:DropDownList ID="listArea" runat="server" Height="16px" Width="240px" DataSourceID="sqlAreas" DataTextField="Nome" DataValueField="ID"></asp:DropDownList>
-                <asp:SqlDataSource ID="sqlAreas" runat="server" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=Livros;Integrated Security=True;Encrypt=False;Trust Server Certificate=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [ID], [Nome] FROM [Area] ORDER BY [Nome]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="sqlAreas" runat="server" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=Livros;Integrated Security=True;Encrypt=False;" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [ID], [Nome] FROM [Area] ORDER BY [Nome]"></asp:SqlDataSource>
             </p>
 
             <asp:GridView ID="GridArea" runat="server"></asp:GridView>

@@ -15,6 +15,42 @@ namespace projetoLocais.utilizador
     {
 
         /// <summary>
+        /// ObterLocaisUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ObterLocaisUser;
+
+        /// <summary>
+        /// nomeUtilizadorLiteral control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal nomeUtilizadorLiteral;
+
+        /// <summary>
+        /// btnCriarLocal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCriarLocal;
+
+        /// <summary>
+        /// btnEditarLocal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditarLocal;
+
+        /// <summary>
         /// gridLocais control.
         /// </summary>
         /// <remarks>
@@ -22,5 +58,14 @@ namespace projetoLocais.utilizador
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DataList gridLocais;
+
+        /// <summary>
+        /// semLocais control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel semLocais;
     }
 }

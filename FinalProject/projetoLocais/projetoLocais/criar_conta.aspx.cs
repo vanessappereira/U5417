@@ -35,17 +35,20 @@ namespace projetoLocais
 
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
-            command.CommandText = "INSERT Utilizador(Id, Nome, Email, DataNascimento) " +
-                "VALUES(@nome, @email, @data, @user_id)";
+            command.CommandText = "INSERT Utilizador(Id, Nome, Email, DataNascimento) " + "VALUES(@user_id, @nome, @email, @data)";
 
+            command.Parameters.AddWithValue("@user_id", user_id.ToString());
             command.Parameters.AddWithValue("@nome", textNome.Text);
             command.Parameters.AddWithValue("@email", textEmail.Text);
             command.Parameters.AddWithValue("@data", DateTime.Parse(textData.Text));
-            command.Parameters.AddWithValue("@user_id", user_id.ToString());
 
             connection.Open();
             command.ExecuteNonQuery();
             connection.Close();
+
+            // Armazenar o UserID na sessão
+            Session["id_utilizador"] = user_id.ToString();
+            Session["nome_utilizador"] = textNome.Text;
 
             Response.Redirect("login.aspx");
         }
