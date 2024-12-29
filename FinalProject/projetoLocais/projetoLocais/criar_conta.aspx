@@ -1,6 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="criar_conta.aspx.cs" Inherits="projetoLocais.criar_conta" %>
+﻿<%@ Page Title="Criar Conta" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="criar_conta.aspx.cs" Inherits="projetoLocais.criar_conta" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headContent" runat="server">
+        <title>Criar Conta</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="mainContent" runat="server">
     <style>

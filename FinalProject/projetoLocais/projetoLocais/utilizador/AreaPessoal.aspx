@@ -1,6 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="areaPessoal.aspx.cs" Inherits="projetoLocais.utilizador.areaPessoal" %>
+﻿<%@ Page Title="Area Pessoal" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="areaPessoal.aspx.cs" Inherits="projetoLocais.utilizador.areaPessoal" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headContent" runat="server">
+        <title>Area Pessoal</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="mainContent" runat="server">
     <style>
@@ -37,36 +38,32 @@
             }
     </style>
     <asp:SqlDataSource ID="ObterLocaisUser" runat="server" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=Locais;Integrated Security=True;Encrypt=False"
-        ProviderName="System.Data.SqlClient" SelectCommand="SELECT [Nome], [Morada], [Localidade], [Concelho], [Id], [Utilizador] FROM [Local]">
+        ProviderName="System.Data.SqlClient" SelectCommand="GetLocaisByUtilizador" SelectCommandType="StoredProcedure">
         <SelectParameters>
-            <asp:SessionParameter Name="id" SessionField="id_utilizador" Type="String" />
+            <asp:SessionParameter Name="utilizador" SessionField="id_utilizador" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
 
     <div class="flex-container">
         <div class="welcome-message">
-            <h3>Bem vindo,
-                <asp:Literal ID="nomeUtilizadorLiteral" runat="server"></asp:Literal>
-            </h3>
+            <h3>Bem vindo!</h3>
         </div>
         <div class="button-container">
             <asp:Button ID="btnCriarLocal" runat="server" Text="Criar Local" OnClick="btnCriarLocal_Click" CssClass="styled-button" />
             <asp:Button ID="btnEditarLocal" runat="server" Text="Editar Local" OnClick="btnEditarLocal_Click" CssClass="styled-button" />
         </div>
     </div>
-    <asp:DataList ID="gridLocais" runat="server" DataKeyField="Id" DataSourceID="ObterLocaisUser">
+    <asp:DataList ID="gridLocais" runat="server" DataKeyField="LocalID" DataSourceID="ObterLocaisUser">
         <ItemTemplate>
-            Nome:
-                <asp:Label ID="NomeLabel" runat="server" Text='<%# Eval("Nome") %>' />
+            LocalID:
+                <asp:Label ID="LocalIDLabel" runat="server" Text='<%# Eval("LocalID") %>' />
             <br />
-            Morada:
-                <asp:Label ID="MoradaLabel" runat="server" Text='<%# Eval("Morada") %>' />
+            NomeLocal:
+                <asp:Label ID="NomeLocalLabel" runat="server" Text='<%# Eval("NomeLocal") %>' />
             <br />
-            Localidade:
-                <asp:Label ID="LocalidadeLabel" runat="server" Text='<%# Eval("Localidade") %>' />
+            PrimeiraFoto:
+                <asp:Label ID="PrimeiraFotoLabel" runat="server" Text='<%# Eval("PrimeiraFoto") %>' />
             <br />
-            Concelho:
-                <asp:Label ID="ConcelhoLabel" runat="server" Text='<%# Eval("Concelho") %>' />
             <br />
         </ItemTemplate>
     </asp:DataList>

@@ -8,14 +8,8 @@ namespace projetoLocais.utilizador
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!IsPostBack)
             {
-                // Definir o nome do utilizador
-                if (Session["nome_utilizador"] != null)
-                {
-                    nomeUtilizadorLiteral.Text = Session["nome_utilizador"].ToString();
-                }
                 ObterLocais();
             }
         }
@@ -30,11 +24,12 @@ namespace projetoLocais.utilizador
 
                 SqlCommand command = new SqlCommand();
                 command.Connection = connection;
-                command.CommandText = "SELECT Id, Nome, Foto FROM Local WHERE Utilizador = @id";
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "GetLocaisByUtilizador";
 
                 // associar Id do utilizador ao comando, de forma a 
                 // obter apenas os locais criados pelo utilizador 
-                command.Parameters.AddWithValue("@id", Session["id_utilizador"].ToString());
+                command.Parameters.AddWithValue("@utilizador", Session["id_utilizador"].ToString());
 
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
@@ -43,7 +38,7 @@ namespace projetoLocais.utilizador
                 reader.Close();
                 connection.Close();
 
-                if (table != null)
+                if (table != null && table.Rows.Count > 0)
                 {
                     gridLocais.DataSource = table;
                     gridLocais.DataBind();
@@ -54,22 +49,23 @@ namespace projetoLocais.utilizador
                     semLocais.Visible = true;
                 }
             }
-
             else
             {
                 // Adicionar uma mensagem de log aqui se Session["id_utilizador"] for nulo
                 Response.Write("Session id_utilizador é nulo.");
             }
         }
+
         protected void btnCriarLocal_Click(object sender, EventArgs e)
         {
             // Redirecionar para a página de criação de local
-            Response.Redirect("~/criarLocal.aspx");
+            Response.Redirect("~/utilizador/criarLocal.aspx");
         }
+
         protected void btnEditarLocal_Click(object sender, EventArgs e)
         {
             // Redirecionar para a página de edição de local
-            Response.Redirect("~/editarLocal.aspx");
+            Response.Redirect("~/utilizador/editarLocal.aspx");
         }
     }
 }

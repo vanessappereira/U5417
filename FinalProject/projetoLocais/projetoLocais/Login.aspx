@@ -1,6 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="projetoLocais.login" %>
+﻿<%@ Page Title="Login" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="projetoLocais.login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headContent" runat="server">
+    <title>Login</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="mainContent" runat="server">
     <style>
@@ -59,7 +60,7 @@
     </style>
 
     <h2>Login</h2>
-    <asp:Login ID="loginUtilizador" runat="server" CssClass="template-layout">
+    <asp:Login ID="loginUtilizador" runat="server" OnLoggedIn="loginUtilizador_LoggedIn" CssClass="template-layout">
         <LayoutTemplate>
             <label for="UserName">Nome de Utilizador</label>
             <asp:TextBox ID="UserName" runat="server" CssClass="styled-input" />
