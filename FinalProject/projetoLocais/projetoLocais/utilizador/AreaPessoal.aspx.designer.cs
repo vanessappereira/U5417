@@ -33,15 +33,6 @@ namespace projetoLocais.utilizador
         protected global::System.Web.UI.WebControls.Button btnCriarLocal;
 
         /// <summary>
-        /// btnEditarLocal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditarLocal;
-
-        /// <summary>
         /// gridLocais control.
         /// </summary>
         /// <remarks>

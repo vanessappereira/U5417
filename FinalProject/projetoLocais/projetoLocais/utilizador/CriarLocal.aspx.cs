@@ -72,13 +72,21 @@ namespace projetoLocais.utilizador
 
                 command.Parameters.AddWithValue("@nome", textNome.Text);
                 command.Parameters.AddWithValue("@descricao", textDescricao.Text);
-                command.Parameters.AddWithValue("@morada", textMorada.Text);
+                if (textMorada.Text == "")
+                    command.Parameters.AddWithValue("@morada", DBNull.Value);
+                else
+                    command.Parameters.AddWithValue("@morada", textMorada.Text);
                 command.Parameters.AddWithValue("@localidade", textLocalidade.Text);
                 command.Parameters.AddWithValue("@concelho", listConcelho.SelectedValue);
                 command.Parameters.AddWithValue("@utilizador", Session["id_utilizador"]);
 
+                command.Parameters.AddWithValue("@latitude", DBNull.Value);
+                command.Parameters.AddWithValue("@longitude", DBNull.Value);
+
                 connection.Open();
                 ViewState["idLocal"] = command.ExecuteScalar(); // Armazenar o ID do novo local
+                buttonGuardarFoto.Enabled = true;
+
                 connection.Close();
             }
 

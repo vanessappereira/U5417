@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Area Pessoal" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="areaPessoal.aspx.cs" Inherits="projetoLocais.utilizador.areaPessoal" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headContent" runat="server">
-        <title>Area Pessoal</title>
+    <title>Area Pessoal</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="mainContent" runat="server">
     <style>
@@ -50,7 +50,6 @@
         </div>
         <div class="button-container">
             <asp:Button ID="btnCriarLocal" runat="server" Text="Criar Local" OnClick="btnCriarLocal_Click" CssClass="styled-button" />
-            <asp:Button ID="btnEditarLocal" runat="server" Text="Editar Local" OnClick="btnEditarLocal_Click" CssClass="styled-button" />
         </div>
     </div>
     <asp:DataList ID="gridLocais" runat="server" DataKeyField="LocalID" DataSourceID="ObterLocaisUser">
@@ -64,6 +63,8 @@
             PrimeiraFoto:
                 <asp:Label ID="PrimeiraFotoLabel" runat="server" Text='<%# Eval("PrimeiraFoto") %>' />
             <br />
+            Editar Local:
+            <asp:Button ID="btnEditarLocal" runat="server" Text="Editar Local" OnClick="btnEditarLocal_Click" CssClass="styled-button" />
             <br />
         </ItemTemplate>
     </asp:DataList>

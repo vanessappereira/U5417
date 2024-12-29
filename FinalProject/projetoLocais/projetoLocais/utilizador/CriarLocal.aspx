@@ -7,8 +7,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="mainContent" runat="server">
     <style>
         div, h2 {
-            padding-top: 5px;
-            padding-bottom: 5px;
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
 
         .styled-input {
