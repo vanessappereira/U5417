@@ -72,10 +72,7 @@ namespace projetoLocais.utilizador
 
                 command.Parameters.AddWithValue("@nome", textNome.Text);
                 command.Parameters.AddWithValue("@descricao", textDescricao.Text);
-                if (textMorada.Text == "")
-                    command.Parameters.AddWithValue("@morada", DBNull.Value);
-                else
-                    command.Parameters.AddWithValue("@morada", textMorada.Text);
+                command.Parameters.AddWithValue("@morada", string.IsNullOrEmpty(textMorada.Text) ? (object)DBNull.Value : textMorada.Text);
                 command.Parameters.AddWithValue("@localidade", textLocalidade.Text);
                 command.Parameters.AddWithValue("@concelho", listConcelho.SelectedValue);
                 command.Parameters.AddWithValue("@utilizador", Session["id_utilizador"]);
@@ -84,9 +81,14 @@ namespace projetoLocais.utilizador
                 command.Parameters.AddWithValue("@longitude", DBNull.Value);
 
                 connection.Open();
-                ViewState["idLocal"] = command.ExecuteScalar(); // Armazenar o ID do novo local
-                buttonGuardarFoto.Enabled = true;
 
+                // ERRO: Cannot insert the value NULL into column 'Id', table 'Locais.dbo.Local'; column does not allow nulls. INSERT fails.
+                var result = command.ExecuteScalar();
+                if (result != null)
+                {
+                    ViewState["idLocal"] = result;
+                    buttonGuardarFoto.Enabled = true;
+                }
                 connection.Close();
             }
 
@@ -124,13 +126,11 @@ namespace projetoLocais.utilizador
         protected void buttonEditarLegenda_Click(object sender, EventArgs e)
         {
             // Lógica para editar a legenda da foto selecionada
-            // Exemplo: Atualizar a legenda na base de dados
         }
 
         protected void buttonEliminarFoto_Click(object sender, EventArgs e)
         {
             // Lógica para eliminar a foto selecionada
-            // Exemplo: Remover a foto da base de dados e do sistema de arquivos
         }
 
         protected void buttonCancelarFoto_Click(object sender, EventArgs e)
