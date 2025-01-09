@@ -48,6 +48,14 @@
                 color: #5a5649;
             }
 
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+
         ul li a:hover {
             background-color: #D7D3BF;
         }
@@ -105,7 +113,8 @@
     </main>
 
     <footer class="col-12">
-        <span>Programação Web Servidor</span>
+        <span class="left">Programação Web Servidor </span>
+        <span class="right">CET9674 Vanessa Pereira</span>
     </footer>
 </body>
 </html>
