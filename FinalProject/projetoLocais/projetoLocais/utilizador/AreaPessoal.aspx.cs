@@ -40,7 +40,7 @@ namespace projetoLocais.utilizador
 
                 if (table != null && table.Rows.Count > 0)
                 {
-                    gridLocais.DataSource = table;
+                    //gridLocais.DataSource = table;
                     gridLocais.DataBind();
                     semLocais.Visible = false;
                 }

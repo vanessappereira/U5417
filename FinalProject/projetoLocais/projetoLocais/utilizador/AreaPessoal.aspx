@@ -19,6 +19,7 @@
         .button-container {
             flex: 1;
             display: flex;
+            justify-content: flex-end;
             gap: 10px;
         }
 
@@ -46,22 +47,21 @@
 
     <div class="flex-container">
         <div class="welcome-message">
-            <h3>Bem vindo!</h3>
+            <h3>Área privada - 
+                <asp:LoginName ID="LoginName1" runat="server" />
+            </h3>
         </div>
         <div class="button-container">
             <asp:Button ID="btnCriarLocal" runat="server" Text="Criar Local" OnClick="btnCriarLocal_Click" CssClass="styled-button" />
         </div>
     </div>
-    <asp:DataList ID="gridLocais" runat="server" DataKeyField="LocalID" DataSourceID="ObterLocaisUser">
+    <asp:DataList ID="gridLocais" runat="server" DataKeyField="LocalID" DataSourceID="ObterLocaisUser" RepeatColumns="3" RepeatDirection="Horizontal">
         <ItemTemplate>
-            LocalID:
-                <asp:Label ID="LocalIDLabel" runat="server" Text='<%# Eval("LocalID") %>' />
-            <br />
-            NomeLocal:
-                <asp:Label ID="NomeLocalLabel" runat="server" Text='<%# Eval("NomeLocal") %>' />
-            <br />
             PrimeiraFoto:
                 <asp:Label ID="PrimeiraFotoLabel" runat="server" Text='<%# Eval("PrimeiraFoto") %>' />
+            <br />
+            NomeLocal:
+            <asp:Label ID="NomeLocalLabel" runat="server" Text='<%# Eval("NomeLocal") %>' />
             <br />
             Editar Local:
             <asp:Button ID="btnEditarLocal" runat="server" Text="Editar Local" OnClick="btnEditarLocal_Click" CssClass="styled-button" />

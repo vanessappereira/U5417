@@ -40,7 +40,7 @@
         }
 
             .styled-button:hover {
-                background-color: #45a049;
+                background-color: #a77d00;
             }
 
         .template-layout {
@@ -54,8 +54,8 @@
         }
 
         .checkbox-label {
-            margin-left: 5px; /* Adjust as needed for spacing */
-            color: #555; /* Adjust color as needed */
+            margin-left: 5px; 
+            color: #555; 
         }
     </style>
 
@@ -76,4 +76,5 @@
             <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Iniciar Sessão" CssClass="styled-button" />
         </LayoutTemplate>
     </asp:Login>
+    <a href="criar_conta.aspx">Não tem conta? Crie aqui!</a>
 </asp:Content>

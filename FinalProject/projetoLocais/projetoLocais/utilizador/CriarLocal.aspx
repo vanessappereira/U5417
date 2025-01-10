@@ -37,7 +37,7 @@
         }
 
             .styled-button:hover {
-                background-color: #45a049;
+                background-color: #a77d00;
             }
     </style>
     <div>

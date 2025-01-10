@@ -67,32 +67,39 @@ namespace projetoLocais.utilizador
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand("LocalCriar", connection);
+                SqlCommand command = new SqlCommand();
+                command.Connection = connection;
+
+                // Definição do Stored Procedure que cria o registo na base de dados
+                command.CommandText = "LocalCriar";
                 command.CommandType = CommandType.StoredProcedure;
 
+                // Definição dos valores a inserir na tabela
                 command.Parameters.AddWithValue("@nome", textNome.Text);
                 command.Parameters.AddWithValue("@descricao", textDescricao.Text);
-                command.Parameters.AddWithValue("@morada", string.IsNullOrEmpty(textMorada.Text) ? (object)DBNull.Value : textMorada.Text);
+                if (textMorada.Text == "")
+                    command.Parameters.AddWithValue("@morada", DBNull.Value);
+                else
+                    command.Parameters.AddWithValue("@morada", textMorada.Text);
                 command.Parameters.AddWithValue("@localidade", textLocalidade.Text);
                 command.Parameters.AddWithValue("@concelho", listConcelho.SelectedValue);
                 command.Parameters.AddWithValue("@utilizador", Session["id_utilizador"]);
-
                 command.Parameters.AddWithValue("@latitude", DBNull.Value);
                 command.Parameters.AddWithValue("@longitude", DBNull.Value);
 
                 connection.Open();
 
-                // ERRO: Cannot insert the value NULL into column 'Id', table 'Locais.dbo.Local'; column does not allow nulls. INSERT fails.
-                var result = command.ExecuteScalar();
-                if (result != null)
-                {
-                    ViewState["idLocal"] = result;
-                    buttonGuardarFoto.Enabled = true;
-                }
+                // ERRO: Cannot insert the value NULL into column 'Id', table 'Locais.dbo.Local';
+                // column does not allow nulls. INSERT fails.
+
+                // Guardar em ViewState o ID atribuído ao local
+                ViewState["idLocal"] = command.ExecuteScalar();
+
+                // Ativar botão Guardar foto
+                buttonGuardarFoto.Enabled = true;
                 connection.Close();
             }
-
-            Response.Redirect("paginaInicial.aspx"); // Redirecionar para a página inicial
+            Response.Redirect("~/paginaInicial.aspx"); // Redirecionar para a página inicial
         }
         protected void buttonGuardarFoto_Click(object sender, EventArgs e)
         {
@@ -120,6 +127,10 @@ namespace projetoLocais.utilizador
                 // Limpar campos após guardar
                 textLegenda.Text = string.Empty;
                 ficheiro.Attributes.Clear(); // Limpar o FileUpload
+            }
+            else
+            {
+                buttonGuardarFoto.Enabled = false; // Desativar botão Guardar foto
             }
         }
 
